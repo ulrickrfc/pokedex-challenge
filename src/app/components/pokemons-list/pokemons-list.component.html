@@ -1,7 +1,10 @@
-<main>
-  <app-pokemon-card
-    *ngFor="let pokemon of pokemons"
-    [name]="pokemon.name"
-    [id]="getPokemonId(pokemon.url)"
-  ></app-pokemon-card>
+<main class="container">
+  <section class="pokemons-cards">
+    <app-pokemon-card
+      *ngFor="let pokemon of pokemons"
+      [name]="pokemon.name"
+      [id]="getPokemonId(pokemon.url)"
+    ></app-pokemon-card>
+  </section>
+  <button (click)="addPokemons()">Ver mais</button>
 </main>

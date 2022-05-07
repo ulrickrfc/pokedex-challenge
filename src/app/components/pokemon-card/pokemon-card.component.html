@@ -1,9 +1,18 @@
-<article>
+<article routerLink="/pokemon/{{ id }}">
   <img
     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
       id
     }}.png"
     alt=""
   />
-  <h2 classes="pokemon-name">{{ name }}</h2>
+  <img
+    class="background"
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+      id
+    }}.png"
+    alt=""
+  />
+  <h2 classes="pokemon-name">
+    {{ name.charAt(0).toUpperCase() + name.slice(1) }}
+  </h2>
 </article>

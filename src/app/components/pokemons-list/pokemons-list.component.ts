@@ -37,4 +37,8 @@ export class PokemonsListComponent implements OnInit {
     const id = link[link.length - 2];
     return id;
   }
+  addPokemons(): void {
+    this.pokemonsService.getMorePokemons();
+    this.getPokemons();
+  }
 }

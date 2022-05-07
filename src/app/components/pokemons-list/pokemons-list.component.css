@@ -1,3 +1,28 @@
 .font {
   font-size: 1.4rem;
 }
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4rem;
+}
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
+
+button {
+  margin: 3rem auto;
+  max-width: 250px;
+  width: 100%;
+  background-color: #94e0ee;
+  font-size: 1.6rem;
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+button:hover {
+  cursor: pointer;
+}

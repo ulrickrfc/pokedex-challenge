@@ -6,12 +6,18 @@ import { Observable } from 'rxjs';
 })
 export class PokemonsService {
   private apiUrl = 'https://pokeapi.co/api/v2/';
+  private limit = 16;
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.http.get<any>(this.apiUrl + 'pokemon/?offset=20&limit=24');
+    return this.http.get<any>(
+      this.apiUrl + `pokemon/?offset=20&limit=${this.limit}`
+    );
   }
   getOne(id: number): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'pokemon/' + id);
+  }
+  getMorePokemons(): void {
+    this.limit += 12;
   }
 }
