@@ -1,0 +1,7 @@
+<main>
+  <app-pokemon-card
+    *ngFor="let pokemon of pokemons"
+    [name]="pokemon.name"
+    [id]="getPokemonId(pokemon.url)"
+  ></app-pokemon-card>
+</main>
