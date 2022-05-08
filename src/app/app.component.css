@@ -3,3 +3,34 @@
   padding: 0;
   border: none;
 }
+.wrapper {
+  /* position: relative; */
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(73, 73, 73, 0.514);
+  z-index: 1;
+  transition: all 1 linear;
+}
+.search-container {
+  margin: 8rem 3rem;
+  justify-content: center;
+  max-width: 600px;
+  width: 500px;
+  background: linear-gradient(90deg, #ffbfbf 1%, #fffee9 83%);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.modal i {
+  position: fixed;
+  top: 5rem;
+  right: 16rem;
+}
+.modal-closed {
+  display: none;
+}

@@ -10,6 +10,8 @@ article {
   position: relative;
   overflow: hidden;
   transition: all 0.3s linear;
+  min-width: 7.8rem;
+  max-width: 10rem;
 }
 article:hover {
   cursor: pointer;
@@ -18,17 +20,28 @@ article:hover {
 
 img {
   width: 10rem;
+  z-index: 1;
+  align-self: center;
 }
-.background {
+@media (max-width: 768px) {
+  img {
+    width: 7rem;
+    align-self: center;
+  }
+}
+.background-img {
   left: -400px;
   top: -400px;
   position: absolute;
-  filter: blur(25px);
-  width: 1000px;
-  z-index: -1;
-  filter: blur(50px) brightness(1.4);
+  z-index: 0;
+  filter: blur(30px) brightness(1.4);
   background: rgba(255, 255, 255, 0.322);
+  height: 1000px;
+  width: 1000px;
 }
+
 h2 {
   color: rgba(41, 41, 41, 0.774);
+  font-size: 1.5rem;
+  z-index: 1;
 }

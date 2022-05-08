@@ -10,10 +10,26 @@ import { PokemonsListComponent } from './components/pokemons-list/pokemons-list.
 import { SearchComponent } from './components/search/search.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [AppComponent, PokemonCardComponent, PokemonsListComponent, SearchComponent, PokemonComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  declarations: [
+    AppComponent,
+    PokemonCardComponent,
+    PokemonsListComponent,
+    SearchComponent,
+    PokemonComponent,
+    HeaderComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

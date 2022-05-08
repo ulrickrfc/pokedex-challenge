@@ -1,1 +1,29 @@
-<p>search works!</p>
+<section>
+  <div class="close-container">
+    <i (click)="handleClick()"><span class="material-icons"> close </span></i>
+  </div>
+  <div class="content">
+    <input
+      type="text"
+      [(ngModel)]="pokemonName"
+      placeholder="Type the Pokemon's name"
+    />
+    <i (click)="searchPokemon()"
+      ><span class="material-icons"> search </span></i
+    >
+  </div>
+  <div class="pokemon-found">
+    <app-pokemon-card
+      *ngIf="pokemonFound.forms[0].name !== '' && loading === false"
+      (click)="handleClick()"
+      [name]="pokemonFound.forms[0].name"
+      [id]="getPokemonId(pokemonFound.forms[0].url)"
+    ></app-pokemon-card>
+    <div *ngIf="loading" class="searching">
+      <mat-spinner [diameter]="35"></mat-spinner>
+    </div>
+    <div class="not-found" *ngIf="error && loading === false">
+      Pokemon not found :(
+    </div>
+  </div>
+</section>

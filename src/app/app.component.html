@@ -1,2 +1,11 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <app-header (toggleModal)="toggleModal()"></app-header>
+
+  <router-outlet></router-outlet>
+
+  <section *ngIf="modalOpen" class="modal">
+    <div class="search-container">
+      <app-search (toggleModal)="toggleModal()"></app-search>
+    </div>
+  </section>
+</div>

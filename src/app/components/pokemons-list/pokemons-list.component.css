@@ -26,3 +26,8 @@ button {
 button:hover {
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  section {
+    gap: 1rem;
+  }
+}
