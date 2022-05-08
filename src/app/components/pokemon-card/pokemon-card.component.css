@@ -2,6 +2,8 @@ article {
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: space-around;
+  gap: 0.5rem;
   border: 1px solid rgba(187, 187, 187, 0.644);
   border-radius: 15px;
   padding: 1.4rem;
@@ -19,7 +21,9 @@ article:hover {
 }
 
 img {
-  width: 10rem;
+  /* width: 10rem; */
+  height: 8rem;
+  width: 8rem;
   z-index: 1;
   align-self: center;
 }
@@ -44,4 +48,5 @@ h2 {
   color: rgba(41, 41, 41, 0.774);
   font-size: 1.5rem;
   z-index: 1;
+  margin: 0;
 }

@@ -3,4 +3,60 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin: 4rem 4rem;
+}
+.abilities-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  /* background-color: red; */
+  max-width: 640px;
+}
+
+.main-image-container {
+  position: relative;
+}
+.main-image {
+  width: 145px;
+  height: 179px;
+  align-self: end;
+}
+
+.secondary-images {
+  display: flex;
+}
+.secondary-images {
+  align-self: center;
+}
+
+.pokemon-info-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.abilities-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.ability {
+  background-color: rgb(252, 103, 103);
+  padding: 0.5rem 0.9rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin: 4rem 1rem;
+  }
+  .abilities-info {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
 }

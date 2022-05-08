@@ -11,7 +11,9 @@ import { SearchComponent } from './components/search/search.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FormsModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
