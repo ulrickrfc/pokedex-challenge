@@ -1,0 +1,21 @@
+<div class="wrapper" [ngClass]="classes">
+  <label for="name">Name:</label>
+  <input type="text" [(ngModel)]="name" />
+
+  <label for="name">Age:</label>
+  <input type="text" [(ngModel)]="age" />
+
+  <label for="name">Favorite Pokemon:</label>
+  <input type="text" [(ngModel)]="favoritePokemon" />
+
+  <label for="name">Pokemon Amount:</label>
+  <input type="text" [(ngModel)]="pokemonsAmount" />
+
+  <button (click)="storeTrainer()">Register</button>
+</div>
+<div (click)="getTrainer()">GET</div>
+<div>{{ trainer.name }}</div>
+<div>{{ trainer.age }}</div>
+<div>{{ trainer.favoritePokemon }}</div>
+<div>{{ trainer.pokemonsAmount }}</div>
+<div (click)="removeTrainer()">Remove</div>

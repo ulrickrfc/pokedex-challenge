@@ -1,0 +1,29 @@
+<div class="wrapper" *ngIf="pokemonSpecies.color.name !== ''">
+  <ul>
+    <li>
+      Name: <span> {{ fixString(name) }}</span>
+    </li>
+    <li>
+      Height: <span> {{ formatNumber(height) }}</span>
+    </li>
+    <li>
+      Weight: <span>{{ formatNumber(weight) }}</span>
+    </li>
+    <li>
+      Main Color: <span> {{ fixString(pokemonSpecies.color.name) }}</span>
+    </li>
+    <li *ngIf="pokemonSpecies.evolves_from_species">
+      Evolves from:
+      <span> {{ fixString(pokemonSpecies.evolves_from_species.name) }}</span>
+    </li>
+    <li>
+      Habitat: <span>{{ fixString(pokemonSpecies.habitat.name) }}</span>
+    </li>
+    <div class="abilities-container">
+      <p>Habilities:</p>
+      <div *ngFor="let ability of abilities" class="ability">
+        {{ fixString(ability.ability.name) }}
+      </div>
+    </div>
+  </ul>
+</div>

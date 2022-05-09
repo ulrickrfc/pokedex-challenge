@@ -1,0 +1,15 @@
+<div class="base-stats">
+  <ul>
+    <li *ngFor="let stat of stats">
+      <p>
+        {{ fixString(stat.stat.name) }}: <span>{{ stat.base_stat }}</span>
+      </p>
+      <div class="stat-line-value">
+        <mat-progress-bar
+          mode="determinate"
+          value="{{ stat.base_stat }}"
+        ></mat-progress-bar>
+      </div>
+    </li>
+  </ul>
+</div>

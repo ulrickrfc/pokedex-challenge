@@ -8,35 +8,54 @@
       alt=""
     />
     <!-- <h2>{{ data.abilities[0].ability.name }}</h2> -->
-    <div class="abilities-info">
-      <div class="abilities-container">
+    <!-- <div class="abilities-container">
         <div *ngFor="let ability of data.abilities" class="ability">
           {{ ability.ability.name }}
         </div>
-      </div>
+      </div> -->
 
-      <div class="secondary-images">
-        <img
-          class=""
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
-            data.id
-          }}.png"
-          alt=""
-        />
-        <img
-          class=""
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/{{
-            data.id
-          }}.png"
-          alt=""
-        />
-      </div>
+    <div class="secondary-images">
+      <img
+        class=""
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+          data.id
+        }}.png"
+        alt=""
+      />
+      <img
+        class=""
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/{{
+          data.id
+        }}.png"
+        alt=""
+      />
     </div>
   </div>
   <mat-tab-group>
-    <mat-tab label="About"> About </mat-tab>
-    <mat-tab label="Base Stats"> Base Stats </mat-tab>
-    <mat-tab label="Evolution"> Evolution </mat-tab>
-    <mat-tab label="Moves"> Moves </mat-tab>
+    <mat-tab label="About">
+      <div class="detail-container">
+        <app-about-pokemon
+          [height]="data.height"
+          [weight]="data.weight"
+          [name]="data.forms[0].name"
+          [abilities]="data.abilities"
+        ></app-about-pokemon>
+      </div>
+    </mat-tab>
+    <mat-tab label="Base Stats">
+      <div class="detail-container">
+        <app-stats-pokemon [stats]="data.stats"></app-stats-pokemon>
+      </div>
+    </mat-tab>
+    <!-- <mat-tab label="Evolution">
+      <div class="detail-container">
+        <app-evolutions-pokemon [pokemonId]="data.id"></app-evolutions-pokemon>
+      </div>
+    </mat-tab> -->
+    <mat-tab label="Moves">
+      <div class="detail-container">
+        <app-moves-pokemon [moves]="data.moves"></app-moves-pokemon>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </main>

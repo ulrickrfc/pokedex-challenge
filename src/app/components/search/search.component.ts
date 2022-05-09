@@ -36,6 +36,9 @@ export class SearchComponent implements OnInit {
   errorMessage = 'error';
 
   searchPokemon() {
+    if (this.pokemonName === '') {
+      return;
+    }
     this.loading = true;
     this.pokemonService.findOne(this.pokemonName.toLocaleLowerCase()).subscribe(
       (response) => {

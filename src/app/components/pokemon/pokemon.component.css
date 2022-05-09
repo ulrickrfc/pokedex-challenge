@@ -26,9 +26,7 @@ main {
 
 .secondary-images {
   display: flex;
-}
-.secondary-images {
-  align-self: center;
+  align-self: end;
 }
 
 .pokemon-info-container {
@@ -36,27 +34,28 @@ main {
   flex-direction: row;
   gap: 1rem;
 }
-.abilities-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.ability {
-  background-color: rgb(252, 103, 103);
-  padding: 0.5rem 0.9rem;
-  border-radius: 20px;
-  font-size: 1.2rem;
+
+/* BASE STATS */
+.detail-container {
+  overflow: hidden;
+  min-height: 30rem;
 }
 
 @media (max-width: 768px) {
   main {
-    margin: 4rem 1rem;
+    margin: 2rem 1rem;
   }
   .abilities-info {
     display: flex;
     justify-content: space-evenly;
     gap: 1rem;
+  }
+}
+@media (max-width: 380px) {
+  .detail-container {
+    min-height: 8rem;
+  }
+  main {
+    margin: 1.5rem 1rem;
   }
 }

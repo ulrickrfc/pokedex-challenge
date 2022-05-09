@@ -24,4 +24,14 @@ export class PokemonsService {
   getMorePokemons(): void {
     this.limit += 12;
   }
+
+  getPokemonSpecies(id: number): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'pokemon-species/' + id);
+  }
+
+  getPokemonEvolutionChain(id: number): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'evolution-chain/' + id);
+  }
+
+  //get evolution chain
 }

@@ -13,7 +13,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 import { MatTabsModule } from '@angular/material/tabs';
+import { AboutPokemonComponent } from './components/about-pokemon/about-pokemon.component';
+import { StatsPokemonComponent } from './components/stats-pokemon/stats-pokemon.component';
+import { MovesPokemonComponent } from './components/moves-pokemon/moves-pokemon.component';
+import { TrainerComponent } from './components/trainer/trainer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     SearchComponent,
     PokemonComponent,
     HeaderComponent,
+    AboutPokemonComponent,
+    StatsPokemonComponent,
+    MovesPokemonComponent,
+    TrainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +42,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatTabsModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -13,3 +13,7 @@
 body {
   background: linear-gradient(90deg, #ffbfbf 1%, #fffee9 83%);
 }
+
+.mat-typography {
+  font: 400 14px Roboto, "Helvetica Neue", sans-serif;
+}
