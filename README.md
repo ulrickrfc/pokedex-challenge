@@ -1,27 +1,41 @@
-# Pokedex
+## Sobre
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+Este desafio teve como objetivo a criação de uma interface simular a pokedex. Na aplicação, em sua página inicial podemos ver uma listagem de pokemons. 
 
-## Development server
+<img src="img/home_page.png" alt="drawing" width="400"/>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ao clicar no botão "Load More" sempre no fim da página, será carregado mais pokemons na página.
 
-## Code scaffolding
+Ao clicar em um card de pokemon, você será levado para uma página onde há informações detalhadas sobre o pokemon selecionado, nessa seção havária informações como: altura, peso, habitat, stats, movimentos, e caso tenha evoluido de algum outro pokemon, essa informação estará disponível.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<img src="img/individual_page.png" alt="drawing" width="400"/>
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+ Para pesquisar um pokemon pelo seu nome, basta clicar na opção "Search" no menu acima. Após fazer isso irá aparecer um campo onde será possível preencher o nome e pesquisar. Caso exista o pokemon, você verá o seu card e ao clicar nele, será levado para sua página especifica, caso não exista, aparecerá uma mensagem informando que não foi possível encontrar o pokemon.
+ 
+ <img src="img/search_modal.png" alt="drawing" width="400"/>
+ 
+ 
+Ao clicar na opção "Trainer" no menu principal você será redirecionado para seção de treinador. Caso exista informações sobre o seu perfil treinador ela está disponível, caso não tenha, haverá um aviso informando que não há registro e um botão "Register" que irá te redirecionar para página de registro do treinador. Na etapa de registro você deverá informar o nome, idade, pokemon favorito e quantidade de pokemons. Após clicar em registrar você será redirecionado para página do seu perfil. Lá esterá disponível as informações do seu perfil e também os botões "Edit" e "Remove". Ao clicar no botão "Edit" você será redirecionado para uma página onde será possível editar seus dados, que já estarão presentes no formulário. Ao clicar no botão "Remove" seu perfil será apagado.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<img src="img/trainer_info.png" alt="drawing" width="400"/>
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## O que foi utilizado
+- Typescript
+- Angular 13 framework
+- Angular Material 
+- CSS3
+- Testes Unitários
+## Instruções para uso
+- Clone esse repositório na sua máquina.
+- Instale sua dependências utilizando o comando `npm install`
+- Em seguida execute o comando `ng serve`
+- Siga para o url `http://localhost:4200/`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Obs:
+- Toda a aplicação é responsiva.
+- As informações sobre o treinador estão sendo armazenadas no local storage do navegador.
+- Aprendi diversas funcionalidade do Angular com a base que tinha desenvolvendo com a biblioteca React executando este projeto.
