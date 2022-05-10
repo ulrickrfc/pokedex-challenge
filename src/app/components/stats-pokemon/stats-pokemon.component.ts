@@ -20,7 +20,7 @@ export class StatsPokemonComponent implements OnInit {
   }
   fixLineStats(value: string, statName: string) {
     if (statName === 'hp') {
-      return (100 * Number(value)) / 255;
+      return (100 * Number(value)) / 255;//colocar como constantes
     } else if (statName === 'attack') {
       return (100 * Number(value)) / 190;
     } else if (statName === 'defense' || statName === 'special-defense') {

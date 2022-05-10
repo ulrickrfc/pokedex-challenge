@@ -4,11 +4,12 @@
   </div>
   <div class="content">
     <input
+      id="name-input"
       type="text"
       [(ngModel)]="pokemonName"
       placeholder="Type the Pokemon's name"
     />
-    <i (click)="searchPokemon()"
+    <i id="search" (click)="searchPokemon()"
       ><span class="material-icons"> search </span></i
     >
   </div>

@@ -33,17 +33,14 @@ export class AboutPokemonComponent implements OnInit {
     const fixed = string.charAt(0).toUpperCase() + string.slice(1);
     return fixed.replace('-', ' ');
   }
-  // fixValue(value: string): string {
-  //   const string = value.split('');
-  //   const a = string.join();
-  //   return a;
-  // }
+
   formatNumber(number: string): string {
-    const formattedNumber = new Intl.NumberFormat('pt-BR', {
+    console.log(number);
+    const formattedNumber = new Intl.NumberFormat('en-US', {
       style: 'decimal',
       maximumFractionDigits: 2,
       minimumFractionDigits: 1,
-    }).format(Number(number));
+    }).format(Number(number) / 10);
     return formattedNumber;
   }
 }

@@ -5,29 +5,22 @@
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{
         data.id
       }}.svg"
-      alt=""
+      alt="{{ data.forms[0].name }}"
     />
-    <!-- <h2>{{ data.abilities[0].ability.name }}</h2> -->
-    <!-- <div class="abilities-container">
-        <div *ngFor="let ability of data.abilities" class="ability">
-          {{ ability.ability.name }}
-        </div>
-      </div> -->
-
     <div class="secondary-images">
       <img
         class=""
         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
           data.id
         }}.png"
-        alt=""
+        alt="{{ data.forms[0].name }} front"
       />
       <img
         class=""
         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/{{
           data.id
         }}.png"
-        alt=""
+        alt="{{ data.forms[0].name }} backwards"
       />
     </div>
   </div>
@@ -42,16 +35,13 @@
         ></app-about-pokemon>
       </div>
     </mat-tab>
+
     <mat-tab label="Base Stats">
       <div class="detail-container">
         <app-stats-pokemon [stats]="data.stats"></app-stats-pokemon>
       </div>
     </mat-tab>
-    <!-- <mat-tab label="Evolution">
-      <div class="detail-container">
-        <app-evolutions-pokemon [pokemonId]="data.id"></app-evolutions-pokemon>
-      </div>
-    </mat-tab> -->
+
     <mat-tab label="Moves">
       <div class="detail-container">
         <app-moves-pokemon [moves]="data.moves"></app-moves-pokemon>

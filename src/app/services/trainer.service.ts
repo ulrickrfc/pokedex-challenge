@@ -13,7 +13,7 @@ export class TrainerService {
     this.storage.setItem('trainer', JSON.stringify(trainer));
   }
   get(): any {
-    if (this.storage) {
+    if (this.storage.getItem('trainer')) {
       return this.storage.getItem('trainer');
     }
     return null;

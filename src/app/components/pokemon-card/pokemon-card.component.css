@@ -1,4 +1,4 @@
-article {
+div {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -15,7 +15,7 @@ article {
   min-width: 7.8rem;
   max-width: 10rem;
 }
-article:hover {
+div:hover {
   cursor: pointer;
   transform: scale(1.125);
 }
