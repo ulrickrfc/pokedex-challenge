@@ -1,6 +1,6 @@
 export interface Trainer {
   name: string;
-  age: number;
+  age: string;
   favoritePokemon: string;
-  pokemonsAmount: number;
+  pokemonsAmount: string;
 }

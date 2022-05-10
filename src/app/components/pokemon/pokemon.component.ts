@@ -36,6 +36,6 @@ export class PokemonComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.pokemonService
       .getOne(id)
-      .subscribe((pokemonData) => (this.data = pokemonData));
+      .subscribe((response) => (this.data = response));
   }
 }

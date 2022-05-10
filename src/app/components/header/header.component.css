@@ -21,6 +21,10 @@ a:hover {
   cursor: pointer;
   filter: brightness(0.8);
 }
+
+#search {
+  border-bottom: 2px solid rgb(252, 103, 103);
+}
 @media (max-width: 768px) {
   nav {
     font-size: 1rem;

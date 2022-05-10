@@ -25,7 +25,7 @@
     </li>
   </ul>
   <div class="trainer-options">
-    <button routerLink="/trainer/register" class="edit-btn">Edit</button>
+    <button routerLink="/trainer/edit" class="edit-btn">Edit</button>
     <button class="remove-btn" (click)="removeTrainer()">Remove</button>
   </div>
 </div>
@@ -33,6 +33,6 @@
 <div class="wrapper not-registered" *ngIf="registered === false">
   <h2>Seems like you dont have a trainer profile registered</h2>
   <button class="register-button" routerLink="/trainer/register">
-    <h3>Register</h3>
+    Register
   </button>
 </div>

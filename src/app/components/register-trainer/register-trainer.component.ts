@@ -11,14 +11,24 @@ import { Trainer } from 'src/app/Interfaces/Trainer';
 export class RegisterTrainerComponent implements OnInit {
   trainer: Trainer = {
     name: '',
-    age: 0,
+    age: '',
     favoritePokemon: '',
-    pokemonsAmount: 0,
+    pokemonsAmount: '',
   };
 
   constructor(private trainerService: TrainerService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkRegister();
+  }
+
+  checkRegister(): void {
+    const trainer = JSON.parse(this.trainerService.get());
+    if (trainer !== null) {
+      alert('You already have a register');
+      this.router.navigate(['/trainer']);
+    }
+  }
 
   storeTrainer(): void {
     this.trainerService.set(this.trainer);

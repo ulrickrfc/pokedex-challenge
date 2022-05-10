@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Stat } from 'src/app/Interfaces/Pokemon';
 
 @Component({
   selector: 'app-stats-pokemon',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./stats-pokemon.component.css'],
 })
 export class StatsPokemonComponent implements OnInit {
-  @Input() stats: any = [];
+  @Input() stats: Stat[] = [];
 
   constructor() {}
 

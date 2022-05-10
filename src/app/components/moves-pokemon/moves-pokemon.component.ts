@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { Move } from 'src/app/Interfaces/Pokemon';
 @Component({
   selector: 'app-moves-pokemon',
   templateUrl: './moves-pokemon.component.html',
   styleUrls: ['./moves-pokemon.component.css'],
 })
 export class MovesPokemonComponent implements OnInit {
-  @Input() moves: any = [];
+  @Input() moves: Move[] = [];
 
   constructor() {}
 

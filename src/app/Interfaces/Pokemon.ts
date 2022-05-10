@@ -22,11 +22,15 @@ export interface Abilitie {
 }
 
 export interface Stat {
-  name: string;
-  values: string;
+  stat: {
+    name: string;
+  };
+  base_stat: string;
 }
 export interface Move {
-  name: string;
+  move: {
+    name: string;
+  };
 }
 
 export interface PokemonSearched {

@@ -1,11 +1,7 @@
-.base-stats li {
-  font-size: 20px;
-}
 .base-stats {
   width: 100%;
   color: rgb(42 20 20 / 90%);
 }
-
 .base-stats ul {
   margin: 1.4rem;
   display: flex;
@@ -13,6 +9,10 @@
   gap: 1.2rem;
   list-style-type: none;
 }
+.base-stats li {
+  font-size: 20px;
+}
+
 .base-stats ul li {
   width: 100%;
 }

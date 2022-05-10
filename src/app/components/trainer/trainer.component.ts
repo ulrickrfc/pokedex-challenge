@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainerService } from 'src/app/services/trainer.service';
 import { Router } from '@angular/router';
+import { Trainer } from 'src/app/Interfaces/Trainer';
+
 @Component({
   selector: 'app-trainer',
   templateUrl: './trainer.component.html',
@@ -13,9 +15,7 @@ export class TrainerComponent implements OnInit {
   pokemonsAmount = '';
 
   registered!: boolean;
-  trainer: any = {};
-
-  classes: any = [];
+  trainer!: Trainer;
 
   constructor(private trainerService: TrainerService, private router: Router) {}
 

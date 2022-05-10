@@ -15,11 +15,12 @@ export class EditTrainerComponent implements OnInit {
     this.getTrainer();
   }
   registered!: boolean;
+
   trainer: Trainer = {
     name: '',
-    age: 0,
+    age: '',
     favoritePokemon: '',
-    pokemonsAmount: 0,
+    pokemonsAmount: '',
   };
   getTrainer(): void {
     this.trainer = JSON.parse(this.trainerService.get());
@@ -27,9 +28,6 @@ export class EditTrainerComponent implements OnInit {
       alert("You don't have a trainer profile, please register");
       this.router.navigate(['/trainer/register']);
     }
-    this.trainer === null
-      ? (this.registered = false)
-      : (this.registered = true);
   }
   storeTrainer(): void {
     this.trainerService.set(this.trainer);
