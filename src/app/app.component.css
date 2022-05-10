@@ -25,6 +25,7 @@
   background: linear-gradient(90deg, #ffbfbf 1%, #fffee9 83%);
   border-radius: 15px;
   overflow: hidden;
+  min-height: 360px;
 }
 .modal i {
   position: fixed;
