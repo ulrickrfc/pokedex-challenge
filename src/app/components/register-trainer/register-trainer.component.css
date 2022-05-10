@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 40rem;
+  margin: 4rem auto;
+}
+.wrapper label {
+  margin: 0 2rem;
+  font-size: 1.4rem;
+  color: rgb(42 20 20 / 90%);
+}
+.wrapper input {
+  outline: none;
+  padding: 0.8rem 1.3rem;
+  border: 2px solid rgba(252, 103, 103, 0.658);
+
+  margin: 0 2rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 15px 6px rgba(121, 121, 121, 0.21);
+  box-shadow: 0px 0px 15px 6px rgba(121, 121, 121, 0.21);
+}
+.hide {
+  display: none;
+}
+button {
+  font-size: 1.4rem;
+  margin: 2rem 2rem;
+  padding: 0.8rem;
+  border: 2px solid rgba(252, 103, 103);
+  color: rgb(42 20 20 / 90%);
+
+  background: linear-gradient(225deg, #ffbfbf 1%, #fffee9 83%);
+
+  border-radius: 25px;
+}
+button:hover {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    margin: 2rem auto;
+  }
+}
+
+/* REMOVE ARROWS FROM INPUT FIELD */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

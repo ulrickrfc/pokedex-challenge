@@ -24,19 +24,75 @@
 .hide {
   display: none;
 }
+.wrapper ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  font-size: 1.5rem;
+  color: rgb(42 20 20 / 90%);
+  text-align: center;
+}
+span {
+  margin-left: 1rem;
+  border-bottom: 2px solid #ff7b7b;
+}
 button {
   font-size: 1.4rem;
   margin: 2rem 2rem;
   padding: 0.8rem;
   border: 2px solid rgba(252, 103, 103);
   color: rgb(42 20 20 / 90%);
-
   background: linear-gradient(225deg, #ffbfbf 1%, #fffee9 83%);
-
   border-radius: 25px;
+  max-width: 15rem;
+}
+button:hover {
+  cursor: pointer;
+}
+.trainer-options {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.edit-btn {
+  background: linear-gradient(225deg, #ffd485 1%, #fffee9 83%);
+}
+.remove-btn {
+  background: linear-gradient(225deg, #ff5252 1%, #fffee9 83%);
+}
+
+.trainer-options button {
+  width: 100%;
+  margin: 0;
+}
+.not-registered {
+  display: flex;
+  justify-content: center;
+}
+.not-registered h2 {
+  align-self: center;
+  color: rgb(42 20 20 / 90%);
+}
+.register-button {
+  max-width: 15rem;
+  margin: 0;
+  align-self: center;
+  width: 100%;
+}
+
+.register-button h3 {
+  margin: 0;
 }
 @media (max-width: 768px) {
   .wrapper {
     margin: 2rem auto;
+  }
+  .not-registered h2 {
+    font-size: 0.9rem;
   }
 }

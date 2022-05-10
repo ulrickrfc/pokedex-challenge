@@ -1,21 +1,38 @@
-<div class="wrapper" [ngClass]="classes">
-  <label for="name">Name:</label>
-  <input type="text" [(ngModel)]="name" />
+<div class="wrapper" *ngIf="registered === true">
+  <ul>
+    <li for="name">
+      Name:
+      <span>{{ trainer.name }}</span>
+    </li>
 
-  <label for="name">Age:</label>
-  <input type="text" [(ngModel)]="age" />
+    <li for="name">
+      Age:
+      <span>
+        {{ trainer.age }}
+      </span>
+    </li>
 
-  <label for="name">Favorite Pokemon:</label>
-  <input type="text" [(ngModel)]="favoritePokemon" />
+    <li for="name">
+      Favorite Pokemon:
+      <span>{{ trainer.favoritePokemon }}</span>
+    </li>
 
-  <label for="name">Pokemon Amount:</label>
-  <input type="text" [(ngModel)]="pokemonsAmount" />
-
-  <button (click)="storeTrainer()">Register</button>
+    <li for="name">
+      Pokemon Amount:
+      <span>
+        {{ trainer.pokemonsAmount }}
+      </span>
+    </li>
+  </ul>
+  <div class="trainer-options">
+    <button routerLink="/trainer/register" class="edit-btn">Edit</button>
+    <button class="remove-btn" (click)="removeTrainer()">Remove</button>
+  </div>
 </div>
-<div (click)="getTrainer()">GET</div>
-<div>{{ trainer.name }}</div>
-<div>{{ trainer.age }}</div>
-<div>{{ trainer.favoritePokemon }}</div>
-<div>{{ trainer.pokemonsAmount }}</div>
-<div (click)="removeTrainer()">Remove</div>
+
+<div class="wrapper not-registered" *ngIf="registered === false">
+  <h2>Seems like you dont have a trainer profile registered</h2>
+  <button class="register-button" routerLink="/trainer/register">
+    <h3>Register</h3>
+  </button>
+</div>

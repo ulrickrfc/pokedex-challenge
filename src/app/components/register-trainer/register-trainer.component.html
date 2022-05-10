@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <label for="name">Name:</label>
+  <input type="text" [(ngModel)]="name" />
+
+  <label for="age">Age:</label>
+  <input type="number" [(ngModel)]="age" />
+
+  <label for="favorite-pokemon">Favorite Pokemon:</label>
+  <input type="text" [(ngModel)]="favoritePokemon" />
+
+  <label for="pokemons-amount">Pokemon Amount:</label>
+  <input type="text" [(ngModel)]="pokemonsAmount" />
+
+  <button (click)="storeTrainer()">Register</button>
+</div>
+<!-- <div (click)="getTrainer()">GET</div> -->
