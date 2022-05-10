@@ -7,7 +7,7 @@
       <div class="stat-line-value">
         <mat-progress-bar
           mode="determinate"
-          value="{{ stat.base_stat }}"
+          value="{{ fixLineStats(stat.base_stat, stat.stat.name) }}"
         ></mat-progress-bar>
       </div>
     </li>
