@@ -81,6 +81,7 @@ button:hover {
 .register-button {
   max-width: 15rem;
   margin: 0;
+
   align-self: center;
   width: 100%;
 }
