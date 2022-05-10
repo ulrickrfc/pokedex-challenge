@@ -10,7 +10,8 @@
       Weight: <span>{{ formatNumber(weight) }}</span>
     </li>
     <li>
-      Main Color: <span> {{ fixString(pokemonSpecies.color.name) }}</span>
+      Predominant Color:
+      <span> {{ fixString(pokemonSpecies.color.name) }}</span>
     </li>
     <li *ngIf="pokemonSpecies.evolves_from_species">
       Evolves from:

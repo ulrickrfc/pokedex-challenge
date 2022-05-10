@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { PokemonList, PokemonSearched } from '../Interfaces/Pokemon';
 @Injectable({
   providedIn: 'root',
 })
@@ -9,16 +10,16 @@ export class PokemonsService {
   private limit = 16;
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<any> {
-    return this.http.get<any>(
+  getAll(): Observable<PokemonList> {
+    return this.http.get<PokemonList>(
       this.apiUrl + `pokemon/?offset=20&limit=${this.limit}`
     );
   }
   getOne(id: number): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'pokemon/' + id);
   }
-  findOne(name: string): Observable<any> {
-    return this.http.get<any>(this.apiUrl + 'pokemon/' + name);
+  findOne(name: string): Observable<PokemonSearched> {
+    return this.http.get<PokemonSearched>(this.apiUrl + 'pokemon/' + name);
   }
 
   getMorePokemons(): void {
@@ -28,10 +29,4 @@ export class PokemonsService {
   getPokemonSpecies(id: number): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'pokemon-species/' + id);
   }
-
-  getPokemonEvolutionChain(id: number): Observable<any> {
-    return this.http.get<any>(this.apiUrl + 'evolution-chain/' + id);
-  }
-
-  //get evolution chain
 }

@@ -21,6 +21,7 @@ import { StatsPokemonComponent } from './components/stats-pokemon/stats-pokemon.
 import { MovesPokemonComponent } from './components/moves-pokemon/moves-pokemon.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { RegisterTrainerComponent } from './components/register-trainer/register-trainer.component';
+import { EditTrainerComponent } from './components/edit-trainer/edit-trainer.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { RegisterTrainerComponent } from './components/register-trainer/register
     MovesPokemonComponent,
     TrainerComponent,
     RegisterTrainerComponent,
+    EditTrainerComponent,
   ],
   imports: [
     BrowserModule,

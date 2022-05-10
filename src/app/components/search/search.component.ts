@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Pokemon } from 'src/app/Interfaces/Pokemon';
 import { PokemonsService } from 'src/app/services/pokemons.service';
+import { PokemonSearched } from 'src/app/Interfaces/Pokemon';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +11,7 @@ export class SearchComponent implements OnInit {
   @Output() toggleModal: EventEmitter<any> = new EventEmitter();
 
   pokemonName = '';
-  pokemonFound: any = {
+  pokemonFound: PokemonSearched = {
     forms: [
       {
         name: '',

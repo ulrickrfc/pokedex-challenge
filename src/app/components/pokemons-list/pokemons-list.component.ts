@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from 'src/app/services/pokemons.service';
-import { Pokemon } from 'src/app/Interfaces/Pokemon';
+import { PokemonCard, PokemonList } from 'src/app/Interfaces/Pokemon';
 @Component({
   selector: 'app-pokemons-list',
   templateUrl: './pokemons-list.component.html',
@@ -16,7 +16,9 @@ export class PokemonsListComponent implements OnInit {
   numeroDeVitorias = 0;
   classes = ['container', 'font'];
 
-  pokemons: Pokemon[] = [];
+  pokemons: PokemonList = {
+    results: [],
+  };
 
   mostrarPokemons: boolean = true;
 
@@ -30,7 +32,7 @@ export class PokemonsListComponent implements OnInit {
   getPokemons() {
     this.pokemonsService
       .getAll()
-      .subscribe((pokemonData) => (this.pokemons = pokemonData.results));
+      .subscribe((response) => (this.pokemons.results = response.results));
   }
   getPokemonId(url: string): string {
     const link = url.split('/');

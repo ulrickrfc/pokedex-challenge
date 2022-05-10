@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Trainer } from '../Interfaces/Trainer';
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +9,8 @@ export class TrainerService {
   constructor() {
     this.storage = window.localStorage;
   }
-  set(value: string) {
-    this.storage.setItem('trainer', value);
+  set(trainer: Trainer) {
+    this.storage.setItem('trainer', JSON.stringify(trainer));
   }
   get(): any {
     if (this.storage) {
