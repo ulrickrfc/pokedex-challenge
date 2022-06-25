@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 import { PokemonCard, PokemonList } from 'src/app/Interfaces/Pokemon';
 import * as Aos from 'aos';
@@ -15,15 +15,15 @@ export class PokemonsListComponent implements OnInit {
     pokeballs: 3,
   };
   numeroDeVitorias = 0;
-  classes = ['container', 'font'];
-
   pokemons: PokemonList = {
     results: [],
   };
   loadingPokemons: boolean = true;
   mostrarPokemons: boolean = true;
-
   input = '';
+  showBackToTop = false;
+  classes = ['container', 'font'];
+
   constructor(private pokemonsService: PokemonsService) {
     this.getPokemons();
   }
@@ -56,5 +56,14 @@ export class PokemonsListComponent implements OnInit {
     this.pokemonsService.getMorePokemons();
     this.getPokemons();
     this.loadingPokemons = false;
+  }
+  backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  @HostListener('window:scroll', ['$event']) onScrollEvent() {
+    window.scrollY > 50
+      ? (this.showBackToTop = true)
+      : (this.showBackToTop = false);
   }
 }

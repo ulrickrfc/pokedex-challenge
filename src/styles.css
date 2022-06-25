@@ -10,6 +10,9 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: linear-gradient(90deg, #ffbfbf 1%, #fffee9 83%);
 }

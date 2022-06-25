@@ -15,3 +15,8 @@
     <mat-spinner *ngIf="loadingPokemons" [diameter]="35"></mat-spinner>
   </div>
 </main>
+<div data-aos="fade-up" class="scroll-to-top" *ngIf="showBackToTop">
+  <button (click)="backToTop()">
+    <span class="material-icons"> expand_less </span>
+  </button>
+</div>
