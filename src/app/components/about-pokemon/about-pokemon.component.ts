@@ -35,7 +35,6 @@ export class AboutPokemonComponent implements OnInit {
   }
 
   formatNumber(number: string): string {
-    console.log(number);
     const formattedNumber = new Intl.NumberFormat('en-US', {
       style: 'decimal',
       maximumFractionDigits: 2,

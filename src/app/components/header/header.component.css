@@ -12,7 +12,7 @@ nav {
 
 a {
   text-decoration: none;
-  color: rgb(252, 103, 103);
+  color: var(--smooth-pink);
   filter: brightness(1);
   transition: all 0.4s linear;
   padding-bottom: 0.2rem;
@@ -23,7 +23,7 @@ a:hover {
 }
 
 #search {
-  border-bottom: 2px solid rgb(252, 103, 103);
+  border-bottom: 2px solid var(--smooth-pink);
 }
 @media (max-width: 768px) {
   nav {

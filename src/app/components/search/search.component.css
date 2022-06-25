@@ -4,12 +4,14 @@ input {
   padding: 0.5rem;
   outline: none;
 }
-i {
+button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 3rem;
+  background-color: transparent;
 }
+button:hover,
 i:hover {
   cursor: pointer;
 }

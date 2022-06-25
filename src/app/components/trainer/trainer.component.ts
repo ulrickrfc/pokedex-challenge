@@ -25,7 +25,6 @@ export class TrainerComponent implements OnInit {
 
   getTrainer(): void {
     this.trainer = JSON.parse(this.trainerService.get());
-    console.log(this.trainer === null);
 
     this.trainer === null
       ? (this.registered = false)

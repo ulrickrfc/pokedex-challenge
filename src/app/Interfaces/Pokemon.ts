@@ -41,3 +41,7 @@ export interface PokemonSearched {
     }
   ];
 }
+
+export interface PokemonToSearch {
+  name: string;
+}

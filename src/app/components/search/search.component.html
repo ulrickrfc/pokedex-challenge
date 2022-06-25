@@ -2,17 +2,21 @@
   <div class="close-container">
     <i (click)="handleClick()"><span class="material-icons"> close </span></i>
   </div>
-  <div class="content">
+  <form
+    class="content"
+    (ngSubmit)="searchPokemon()"
+    [formGroup]="pokemonToSearch"
+  >
     <input
       id="name-input"
       type="text"
-      [(ngModel)]="pokemonName"
+      formControlName="name"
       placeholder="Type the Pokemon's name"
     />
-    <i id="search" (click)="searchPokemon()"
-      ><span class="material-icons"> search </span></i
-    >
-  </div>
+    <button type="submit" id="search">
+      <span class="material-icons"> search </span>
+    </button>
+  </form>
   <div class="pokemon-found">
     <app-pokemon-card
       *ngIf="pokemonFound.forms[0].name !== '' && loading === false"

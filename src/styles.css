@@ -17,3 +17,6 @@ body {
 .mat-typography {
   font: 400 14px Roboto, "Helvetica Neue", sans-serif;
 }
+:root {
+  --smooth-pink: rgb(252, 103, 103);
+}

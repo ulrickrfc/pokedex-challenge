@@ -1,15 +1,15 @@
-<div class="wrapper">
+<form class="wrapper" (ngSubmit)="storeTrainer()" [formGroup]="formTrainer">
   <label for="name">Name:</label>
-  <input type="text" [(ngModel)]="trainer.name" />
+  <input type="text" formControlName="name" />
 
   <label for="age">Age:</label>
-  <input type="number" [(ngModel)]="trainer.age" />
+  <input type="number" formControlName="age" />
 
   <label for="favorite-pokemon">Favorite Pokemon:</label>
-  <input type="text" [(ngModel)]="trainer.favoritePokemon" />
+  <input type="text" formControlName="favoritePokemon" />
 
   <label for="pokemons-amount">Pokemon Amount:</label>
-  <input type="number" [(ngModel)]="trainer.pokemonsAmount" />
+  <input type="number" formControlName="pokemonsAmount" />
 
-  <button (click)="storeTrainer()">Register</button>
-</div>
+  <button type="submit">Register</button>
+</form>

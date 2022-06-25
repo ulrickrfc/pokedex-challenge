@@ -23,7 +23,7 @@ button {
   font-size: 1.4rem;
   margin: 2rem 2rem;
   padding: 0.8rem;
-  border: 2px solid rgba(252, 103, 103);
+  border: 2px solid var(--smooth-pink);
   color: rgb(42 20 20 / 90%);
   background: linear-gradient(225deg, #ffbfbf 1%, #fffee9 83%);
   border-radius: 25px;

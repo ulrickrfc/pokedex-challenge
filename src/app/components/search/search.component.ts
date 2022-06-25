@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PokemonsService } from 'src/app/services/pokemons.service';
-import { PokemonSearched } from 'src/app/Interfaces/Pokemon';
+import { PokemonSearched, PokemonToSearch } from 'src/app/Interfaces/Pokemon';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -10,7 +11,9 @@ import { PokemonSearched } from 'src/app/Interfaces/Pokemon';
 export class SearchComponent implements OnInit {
   @Output() toggleModal: EventEmitter<any> = new EventEmitter();
 
-  pokemonName = '';
+  pokemonToSearch!: FormGroup;
+  loading = false;
+
   pokemonFound: PokemonSearched = {
     forms: [
       {
@@ -19,45 +22,55 @@ export class SearchComponent implements OnInit {
       },
     ],
   };
+  error = false;
+
   constructor(private pokemonService: PokemonsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.pokemonToSearch = new FormGroup({
+      name: new FormControl(''),
+    });
+  }
 
   handleClick(): void {
+    //especificar nome *openModal*
     this.toggleModal.emit();
   }
-  error = false;
   getPokemonId(url: string): string {
     const link = url.split('/');
     const id = link[link.length - 2];
     return id;
   }
-  loading = false;
-  errorMessage = 'error';
-
+  createForm(pokemonToSearch: PokemonToSearch) {
+    this.pokemonToSearch = new FormGroup({
+      name: new FormControl(pokemonToSearch.name),
+    });
+  }
   searchPokemon() {
-    if (this.pokemonName === '') {
+    if (this.pokemonToSearch.value.name === '') {
       return;
     }
     this.loading = true;
-    this.pokemonService.findOne(this.pokemonName.toLocaleLowerCase()).subscribe(
-      (response) => {
-        this.loading = false;
-        this.pokemonFound = response;
-        this.error = false;
-      },
-      (error) => {
-        this.pokemonFound = {
-          forms: [
-            {
-              name: '',
-              url: '',
-            },
-          ],
-        };
-        this.loading = false;
-        this.error = true;
-      }
-    );
+    this.pokemonService
+      .findOne(this.pokemonToSearch.value.name.toLocaleLowerCase())
+      .subscribe(
+        (response) => {
+          this.loading = false;
+          this.pokemonFound = response;
+          this.error = false;
+        },
+        (error) => {
+          this.pokemonFound = {
+            forms: [
+              {
+                name: '',
+                url: '',
+              },
+            ],
+          };
+          this.loading = false;
+          this.error = true;
+        }
+      );
   }
 }
