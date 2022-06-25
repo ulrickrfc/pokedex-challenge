@@ -6,5 +6,12 @@
       [id]="getPokemonId(pokemon.url)"
     ></app-pokemon-card>
   </section>
-  <button (click)="addPokemons()">Load More</button>
+  <div
+    class="loading"
+    infinite-scroll
+    [infiniteScrollDistance]="0.5"
+    (scrolled)="addPokemons()"
+  >
+    <mat-spinner *ngIf="loadingPokemons" [diameter]="35"></mat-spinner>
+  </div>
 </main>

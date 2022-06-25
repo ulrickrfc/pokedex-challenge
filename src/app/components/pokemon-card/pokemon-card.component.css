@@ -1,4 +1,4 @@
-div {
+.pokemon-card {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -15,7 +15,7 @@ div {
   min-width: 7.8rem;
   max-width: 10rem;
 }
-div:hover {
+.pokemon-card:hover {
   cursor: pointer;
   transform: scale(1.125);
 }

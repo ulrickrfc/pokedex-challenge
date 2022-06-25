@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 import { PokemonCard, PokemonList } from 'src/app/Interfaces/Pokemon';
+import * as Aos from 'aos';
 @Component({
   selector: 'app-pokemons-list',
   templateUrl: './pokemons-list.component.html',
@@ -19,7 +20,7 @@ export class PokemonsListComponent implements OnInit {
   pokemons: PokemonList = {
     results: [],
   };
-
+  loadingPokemons: boolean = true;
   mostrarPokemons: boolean = true;
 
   input = '';
@@ -27,12 +28,23 @@ export class PokemonsListComponent implements OnInit {
     this.getPokemons();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    Aos.init({
+      once: true,
+      duration: 600,
+    });
+  }
 
   getPokemons() {
     this.pokemonsService
       .getAll()
-      .subscribe((response) => (this.pokemons.results = response.results));
+      .subscribe(
+        (response) =>
+          (this.pokemons.results = [
+            ...this.pokemons.results,
+            ...response.results,
+          ])
+      );
   }
   getPokemonId(url: string): string {
     const link = url.split('/');
@@ -40,7 +52,9 @@ export class PokemonsListComponent implements OnInit {
     return id;
   }
   addPokemons(): void {
+    this.loadingPokemons = true;
     this.pokemonsService.getMorePokemons();
     this.getPokemons();
+    this.loadingPokemons = false;
   }
 }

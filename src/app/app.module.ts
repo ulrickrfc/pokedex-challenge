@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 import { MatTabsModule } from '@angular/material/tabs';
 import { AboutPokemonComponent } from './components/about-pokemon/about-pokemon.component';
 import { StatsPokemonComponent } from './components/stats-pokemon/stats-pokemon.component';
@@ -47,6 +49,7 @@ import { EditTrainerComponent } from './components/edit-trainer/edit-trainer.com
     MatTabsModule,
     MatProgressBarModule,
     ReactiveFormsModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
