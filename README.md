@@ -36,6 +36,7 @@ Ao clicar na opção "Trainer" no menu principal você será redirecionado para 
 - Siga para o url `http://localhost:4200/`
 
 ### Obs:
+- Esta aplicação está disponível neste [link](https://pokedex-challenge-3243.netlify.app/).
 - Toda a aplicação é responsiva.
 - As informações sobre o treinador estão sendo armazenadas no local storage do navegador.
 - Aprendi diversas funcionalidade do Angular com a base que tinha desenvolvendo com a biblioteca React executando este projeto.
