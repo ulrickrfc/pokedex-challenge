@@ -9,7 +9,7 @@
   <div
     class="loading"
     infinite-scroll
-    [infiniteScrollDistance]="0"
+    [infiniteScrollDistance]="0.1"
     (scrolled)="addPokemons()"
   >
     <mat-spinner *ngIf="loadingPokemons" [diameter]="35"></mat-spinner>
