@@ -4,8 +4,6 @@ Este desafio teve como objetivo a criação de uma interface similar a pokedex. 
 
 <img src="img/home_page.png" alt="drawing" width="400"/>
 
-Ao clicar no botão "Load More" sempre no fim da página, será carregado mais pokemons na página.
-
 Ao clicar em um card de pokemon, você será levado para uma página onde há informações detalhadas sobre o pokemon selecionado, nessa seção haverá informações como: altura, peso, habitat, lista de stats, lista de movimentos, e caso tenha evoluido de algum outro pokemon, essa informação estará disponível.
 
 <img src="img/individual_page.png" alt="drawing" width="400"/>
