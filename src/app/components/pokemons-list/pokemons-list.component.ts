@@ -38,13 +38,8 @@ export class PokemonsListComponent implements OnInit {
   getPokemons() {
     this.pokemonsService
       .getAll()
-      .subscribe(
-        (response) =>
-          (this.pokemons.results = [
-            ...this.pokemons.results,
-            ...response.results,
-          ])
-      );
+      .subscribe((response) => (this.pokemons.results = response.results));
+    console.log(this.pokemons.results);
   }
   getPokemonId(url: string): string {
     const link = url.split('/');
@@ -54,8 +49,18 @@ export class PokemonsListComponent implements OnInit {
   addPokemons(): void {
     this.loadingPokemons = true;
     this.pokemonsService.getMorePokemons();
-    this.getPokemons();
     this.loadingPokemons = false;
+
+    this.pokemonsService
+      .getAll()
+      .subscribe(
+        (response) =>
+          (this.pokemons.results = [
+            ...this.pokemons.results,
+            ...response.results.slice(-12),
+          ])
+      );
+    console.log(this.pokemons.results);
   }
   backToTop() {
     document.body.scrollTop = 0;
