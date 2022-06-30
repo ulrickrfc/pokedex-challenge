@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 import { PokemonCard, PokemonList } from 'src/app/Interfaces/Pokemon';
 import * as Aos from 'aos';
@@ -39,7 +39,6 @@ export class PokemonsListComponent implements OnInit {
     this.pokemonsService
       .getAll()
       .subscribe((response) => (this.pokemons.results = response.results));
-    console.log(this.pokemons.results);
   }
   getPokemonId(url: string): string {
     const link = url.split('/');
@@ -69,5 +68,9 @@ export class PokemonsListComponent implements OnInit {
     window.scrollY > 50
       ? (this.showBackToTop = true)
       : (this.showBackToTop = false);
+  }
+
+  ngOnDestroy() {
+    this.pokemonsService.resetPokemonsListLimit();
   }
 }

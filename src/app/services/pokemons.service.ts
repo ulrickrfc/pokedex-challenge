@@ -29,4 +29,7 @@ export class PokemonsService {
   getPokemonSpecies(id: number): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'pokemon-species/' + id);
   }
+  resetPokemonsListLimit(): void {
+    this.limit = 16;
+  }
 }
