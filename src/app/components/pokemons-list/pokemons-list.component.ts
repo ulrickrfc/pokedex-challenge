@@ -60,7 +60,6 @@ export class PokemonsListComponent implements OnInit {
             ...response.results.slice(-12),
           ])
       );
-    console.log(this.pokemons.results);
   }
   backToTop() {
     document.body.scrollTop = 0;
