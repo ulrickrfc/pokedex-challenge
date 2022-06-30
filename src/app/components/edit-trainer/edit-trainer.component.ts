@@ -4,6 +4,8 @@ import { TrainerService } from 'src/app/services/trainer.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-edit-trainer',
   templateUrl: './edit-trainer.component.html',
@@ -12,7 +14,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class EditTrainerComponent implements OnInit {
   trainer!: FormGroup;
 
-  constructor(private trainerService: TrainerService, private router: Router) {}
+  constructor(
+    private trainerService: TrainerService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.getTrainer();
@@ -34,7 +40,7 @@ export class EditTrainerComponent implements OnInit {
   }
   storeTrainer(): void {
     this.trainerService.set(this.trainer.value);
-    alert('Trainer profile saved!');
+    this.toastr.success('Trainer profile saved!');
     this.router.navigate(['/trainer']);
   }
 }

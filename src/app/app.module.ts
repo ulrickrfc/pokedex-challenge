@@ -25,6 +25,8 @@ import { TrainerComponent } from './components/trainer/trainer.component';
 import { RegisterTrainerComponent } from './components/register-trainer/register-trainer.component';
 import { EditTrainerComponent } from './components/edit-trainer/edit-trainer.component';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,7 @@ import { EditTrainerComponent } from './components/edit-trainer/edit-trainer.com
     MatProgressBarModule,
     ReactiveFormsModule,
     InfiniteScrollModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

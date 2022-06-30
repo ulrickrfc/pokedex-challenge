@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TrainerService } from 'src/app/services/trainer.service';
 import { Router } from '@angular/router';
 import { Trainer } from 'src/app/Interfaces/Trainer';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-trainer',
@@ -17,7 +18,11 @@ export class TrainerComponent implements OnInit {
   registered!: boolean;
   trainer!: Trainer;
 
-  constructor(private trainerService: TrainerService, private router: Router) {}
+  constructor(
+    private trainerService: TrainerService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.getTrainer();
@@ -32,7 +37,7 @@ export class TrainerComponent implements OnInit {
   }
   removeTrainer(): void {
     this.trainerService.remove();
-    alert('Trainer profile deleted');
+    this.toastr.success('Trainer profile deleted');
     this.router.navigate(['/']);
   }
 }

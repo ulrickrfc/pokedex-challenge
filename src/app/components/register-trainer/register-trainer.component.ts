@@ -3,6 +3,7 @@ import { TrainerService } from 'src/app/services/trainer.service';
 import { Router } from '@angular/router';
 import { Trainer } from 'src/app/Interfaces/Trainer';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register-trainer',
@@ -12,7 +13,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class RegisterTrainerComponent implements OnInit {
   formTrainer!: FormGroup;
 
-  constructor(private trainerService: TrainerService, private router: Router) {}
+  constructor(
+    private trainerService: TrainerService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.checkRegister();
@@ -34,11 +39,12 @@ export class RegisterTrainerComponent implements OnInit {
 
   storeTrainer(): void {
     this.trainerService.set(this.formTrainer.value);
-    alert('Trainer profile saved!');
+    this.toastr.success('Registered successfully!');
     this.router.navigate(['/trainer']);
   }
   removeTrainer(): void {
     this.trainerService.remove();
+    this.toastr.success('Removed successfully!');
   }
 
   createForm(trainer: Trainer) {
