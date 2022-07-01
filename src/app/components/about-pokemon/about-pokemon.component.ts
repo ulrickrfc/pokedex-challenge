@@ -12,7 +12,11 @@ export class AboutPokemonComponent implements OnInit {
   @Input() weight = '';
   @Input() name = '';
   @Input() abilities: any = [];
-  pokemonSpecies: any = {};
+  pokemonSpecies: any = {
+    color: {
+      name: '',
+    },
+  };
   constructor(
     private pokemonService: PokemonsService,
     private route: ActivatedRoute
