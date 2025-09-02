@@ -3,7 +3,7 @@
 
   <router-outlet></router-outlet>
 
-  <section *ngIf="modalOpen" class="modal">
+  <section *ngIf="modalOpen" [@modalAnimation] class="modal">
     <div class="search-container">
       <app-search (toggleModal)="toggleModal()"></app-search>
     </div>
